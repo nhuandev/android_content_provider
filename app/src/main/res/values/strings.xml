@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">AppContentProvider</string>
+
+    <!--String layout permission-->
+    <string name="lb_storage_permission">Storage Permission</string>
+    <string name="lb_allow">Allow</string>
+    <string name="lb_permission_denied">Permission denied</string>
+    <string name="lb_title_permission">Permission needed</string>
+    <string name="lb_setting">Setting</string>
+    <string name="lb_cancel">Cancel</string>
+    <string name="lb_permission">Permission</string>
+    <string name="lb_message_permission_gallery">Permission is required to access gallery</string>
+
+    <!--String user-->
+    <string name="lb_user_list">List User</string>
+    <string name="lb_user_list_empty">List User is empty</string>
+    <string name="lb_user_name">User Name</string>
+    <string name="lb_user_age">User Age</string>
+    <string name="lb_user_add">Add User</string>
+    <string name="lb_user_update">Update User</string>
+    <string name="lb_user_detail">Detail User</string>
+    <string name="lb_user_data_null">Data User is null</string>
+    <string name="lb_user_add_success">Add User Success</string>
+    <string name="lb_user_delete_success">Delete User Success</string>
+    <string name="lb_user_update_success">Update User Success</string>
+
+    <string name="lb_city_name">City Name</string>
+    <string name="lb_city_code">City Code</string>
+    <string name="lb_city_add">Add City</string>
+
+    <!--City message-->
+    <string-array name="lb_city_select">
+        <item>Select City</item>
+    </string-array>
+    <string name="lb_city_add_success">City add success</string>
+
+    <!--String toast-->
+    <string name="lb_toast_notify_delete">Notify delete</string>
+    <string name="lb_toast_delete">Are you sure you want to delete?</string>
+</resources>
