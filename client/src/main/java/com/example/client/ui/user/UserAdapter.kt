@@ -18,6 +18,7 @@ class UserAdapter(
             binding.apply {
                 tvUserName.text = user.userName
                 tvUserAge.text = user.userAge.toString()
+                tvCityName.text = user.cityName
                 user.avatar?.let {
                     val bitmap = BitmapFactory.decodeByteArray(it, 0, it.size)
                     imgUser.setImageBitmap(bitmap)

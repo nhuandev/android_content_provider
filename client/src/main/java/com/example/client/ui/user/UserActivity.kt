@@ -10,7 +10,6 @@ import com.example.client.R
 import com.example.client.Utils.Constants
 import com.example.client.databinding.ActivityUserBinding
 import com.example.client.extention.toast
-import com.example.client.models.UserDB
 import kotlin.getValue
 
 class UserActivity : AppCompatActivity() {
@@ -50,26 +49,6 @@ class UserActivity : AppCompatActivity() {
     private fun observeViewModel() {
         userViewModel.users.observe(this@UserActivity) {
             adapterUser.updateData(it)
-        }
-
-        userViewModel.message.observe(this@UserActivity) {
-            when (it) {
-                Constants.ADD_USER_SUCCESS -> {
-                    toast(R.string.add_user_success, Toast.LENGTH_SHORT)
-                }
-
-                Constants.DELETE_USER_SUCCESS -> {
-                    toast(R.string.delete_user_success)
-                }
-
-                Constants.UPDATE_USER_SUCCESS -> {
-                    toast(R.string.update_user_success)
-                }
-
-                Constants.STATUS_FAIL -> {
-                    toast(R.string.status_fail)
-                }
-            }
         }
     }
 

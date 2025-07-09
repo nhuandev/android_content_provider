@@ -4,6 +4,7 @@ import android.content.Intent
 import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
@@ -69,13 +70,13 @@ class UserAddActivity : AppCompatActivity() {
                 btnAddUser.isEnabled = false
                 (intent.getSerializableExtra("KEY_USER_ID") as? UserDB)?.let {
                     userDB = it
-                    binding.etUserName.setText(it.userName)
-                    binding.etUserAge.setText(it.userAge.toString())
+                    etUserName.setText(it.userName)
+                    etUserAge.setText(it.userAge.toString())
 
                     it.avatar?.let { avatarBytes ->
                         val imageUser =
                             BitmapFactory.decodeByteArray(avatarBytes, 0, avatarBytes.size)
-                        binding.imgUser.setImageBitmap(imageUser)
+                        imgUser.setImageBitmap(imageUser)
                     }
                 } ?: run {
                     finish()
@@ -125,22 +126,27 @@ class UserAddActivity : AppCompatActivity() {
         }
     }
 
+    private fun handelSaveImage(uri: Uri?) {
+        uri?.let {
+            val originalBytes = ConvertData(this@UserAddActivity).uriToByteArray(it)
+            originalBytes?.let {
+                val originalBitmap =
+                    BitmapFactory.decodeByteArray(originalBytes, 0, originalBytes.size)
+
+                val resizedBitmap = ConvertData(this@UserAddActivity).resizeBitmap(originalBitmap)
+                selectedImage = ConvertData(this@UserAddActivity).bitmapToByteArray(resizedBitmap)
+
+                binding.imgUser.setImageBitmap(resizedBitmap)
+            } ?: run {
+                Log.d("TAG", "handelSaveImage: error")
+            }
+        }
+    }
+
     private val pickImageLauncher =
         registerForActivityResult(ActivityResultContracts.OpenDocument()) { uri: Uri? ->
             uri?.let {
-                try {
-                    contentResolver.takePersistableUriPermission(
-                        it,
-                        Intent.FLAG_GRANT_READ_URI_PERMISSION
-                    )
-                } catch (e: Exception) {
-                    e.printStackTrace()
-                }
-                val imageBytes = ConvertData(this@UserAddActivity).uriToByteArray(it)
-                selectedImage = imageBytes
-
-                val bitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
-                binding.imgUser.setImageBitmap(bitmap)
+                handelSaveImage(uri)
             }
         }
 }

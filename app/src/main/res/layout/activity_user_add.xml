@@ -60,6 +60,24 @@
             app:layout_constraintTop_toBottomOf="@+id/et_user_name"
             tools:ignore="Autofill,TextFields" />
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_30"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_user_age"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tv_city_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/lb_city_name" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
         <Button
             android:id="@+id/btn_add"
             android:layout_width="match_parent"
@@ -68,10 +86,9 @@
             android:text="@string/lb_user_add"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_user_age"
+            app:layout_constraintTop_toBottomOf="@+id/text_input_layout"
             tools:ignore="MissingConstraints" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     <ProgressBar
         android:id="@+id/progress_circular"

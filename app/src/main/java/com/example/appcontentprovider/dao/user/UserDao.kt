@@ -38,7 +38,8 @@ interface UserDao {
         val user = UserDB(
             userName = contents.getAsString("userName"),
             userAge = contents.getAsInteger("userAge"),
-            avatar = contents.getAsByteArray("avatar")
+            avatar = contents.getAsByteArray("avatar"),
+            cityName = contents.getAsString("cityName")
         )
         insertUser(user)
     }
@@ -52,7 +53,8 @@ interface UserDao {
             id = contents.getAsInteger("id"),
             userName = contents.getAsString("userName"),
             userAge = contents.getAsInteger("userAge"),
-            avatar = contents.getAsByteArray("avatar")
+            avatar = contents.getAsByteArray("avatar"),
+            cityName = contents.getAsString("cityName")
         )
         Log.d("TAG", "updateUserProvider called")
         return updateUser(user)

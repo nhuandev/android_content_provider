@@ -33,9 +33,11 @@
         <activity android:name=".ui.user.UserActivity" />
         <activity android:name=".ui.user.UserAddActivity" />
         <activity android:name=".ui.user.UserDetailActivity" />
+        <activity android:name=".ui.product.ProductActivity" />
+        <activity android:name=".ui.product.ProductAddActivity" />
 
         <provider
-            android:name=".provider.ContentProviderUser"
+            android:name=".provider.ContentProviderApp"
             android:authorities="com.example.appcontentprovider.provider"
             android:enabled="true"
             android:exported="true"

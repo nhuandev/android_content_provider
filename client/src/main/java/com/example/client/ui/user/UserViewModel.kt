@@ -26,7 +26,6 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
                 val users = contentResolverUser.getUsers()
                 _users.postValue(users)
             } catch (e: Exception) {
-
                 e.printStackTrace()
             } finally {
 

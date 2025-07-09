@@ -7,5 +7,6 @@ class UserDB(
     var avatar: ByteArray? = null,
     var userName: String = "",
     var userAge: Int = 0,
+    var cityName: String = ""
 ) : Serializable {
 }

@@ -18,6 +18,7 @@ class UserAdapter(
             binding.apply {
                 tvUserName.text = user.userName
                 tvUserAge.text = user.userAge.toString()
+                tvCityName.text = user.cityName
                 if (user.avatar != null) {
                     imgUser.setImageBitmap(ConvertData(root.context).byteArrayToBitmap(user.avatar!!))
                 } else {

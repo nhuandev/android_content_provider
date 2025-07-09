@@ -22,7 +22,8 @@ class ContentResolverUser(private val context: Context) {
                 val userName = getString(getColumnIndexOrThrow(Constants.KEY_USER_NAME))
                 val userAge = getInt(getColumnIndexOrThrow(Constants.KEY_USER_AGE))
                 val avatar = getBlob(getColumnIndexOrThrow(Constants.KEY_USER_AVATAR))
-                users.add(UserDB(id, avatar, userName, userAge))
+                val cityName = getString(getColumnIndexOrThrow(Constants.KEY_USER_CITY_NAME))
+                users.add(UserDB(id, avatar, userName, userAge, cityName))
             }
         }
         return users
@@ -35,6 +36,7 @@ class ContentResolverUser(private val context: Context) {
                 put(Constants.KEY_USER_NAME, user.userName)
                 put(Constants.KEY_USER_AGE, user.userAge)
                 put(Constants.KEY_USER_AVATAR, user.avatar)
+                put(Constants.KEY_USER_CITY_NAME, user.cityName)
             }
             contentResolver.insert(uriUser, values)
             true
@@ -62,6 +64,7 @@ class ContentResolverUser(private val context: Context) {
                 put(Constants.KEY_USER_NAME, user.userName)
                 put(Constants.KEY_USER_AGE, user.userAge)
                 put(Constants.KEY_USER_AVATAR, user.avatar)
+                put(Constants.KEY_USER_CITY_NAME, user.cityName)
             }
             val selection = "${Constants.KEY_USER_ID} = ?"
             val selectionArgs = arrayOf(user.id.toString())

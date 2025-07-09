@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "AppContentProvider"
 include(":app")
 include(":client")
+include(":picker")

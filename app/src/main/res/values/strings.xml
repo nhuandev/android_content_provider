@@ -12,7 +12,7 @@
     <string name="lb_message_permission_gallery">Permission is required to access gallery</string>
 
     <!--String user-->
-    <string name="lb_user_list">List User</string>
+    <string name="lb_user_list">List User Server</string>
     <string name="lb_user_list_empty">List User is empty</string>
     <string name="lb_user_name">User Name</string>
     <string name="lb_user_age">User Age</string>
@@ -28,6 +28,16 @@
     <string name="lb_city_code">City Code</string>
     <string name="lb_city_add">Add City</string>
 
+    <!--String product-->
+    <string name="lb_product_list">List Product Server</string>
+    <string name="lb_product_list_empty">List Product is empty</string>
+    <string name="lb_product_name">Product Name</string>
+    <string name="lb_product_price">Product Price</string>
+    <string name="lb_product_desc">Product Desc</string>
+    <string name="lb_product_image">Select product image</string>
+    <string name="lb_product_add">Add Product</string>
+    <string name="lb_product_update">Update Product</string>
+
     <!--City message-->
     <string-array name="lb_city_select">
         <item>Select City</item>
@@ -37,4 +47,5 @@
     <!--String toast-->
     <string name="lb_toast_notify_delete">Notify delete</string>
     <string name="lb_toast_delete">Are you sure you want to delete?</string>
+    <string name="lb_toast_check_value">Please fill all fields</string>
 </resources>

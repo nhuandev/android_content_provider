@@ -42,6 +42,7 @@ class UserAddActivity : AppCompatActivity() {
             btnAdd.setOnClickListener {
                 val userName = etUserName.text.toString()
                 val userAge = etUserAge.text.toString()
+                val cityName = tvCityName.text.toString()
                 val avatar = selectedImage
 
                 val age = try {
@@ -64,6 +65,7 @@ class UserAddActivity : AppCompatActivity() {
                         userName = userName,
                         userAge = age,
                         avatar = avatar,
+                        cityName = cityName
                     )
                 )
             }
